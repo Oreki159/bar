@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="bar-entity">
+		<class>com.dbs.bar.entity.Bar</class>
+		<class>com.dbs.bar.entity.Catalog</class>
+		<class>com.dbs.bar.entity.Category</class>
+		<class>com.dbs.bar.entity.Customer</class>
+		<class>com.dbs.bar.entity.OrderDetail</class>
+		<class>com.dbs.bar.entity.Order</class>
+		<class>com.dbs.bar.entity.Product</class>
+		<class>com.dbs.bar.entity.Reputation</class>
+
+		<properties>
+			<property name="eclipselink.weaving" value="static" />
+			<property name="eclipselink.target-database"
+				value="org.eclipse.persistence.platform.database.MySQLPlatform" />
+
+			<property name="eclipselink.logging.level" value="WARNING" />
+
+		</properties>
+	</persistence-unit>
+</persistence>
