@@ -15,7 +15,7 @@ import javax.persistence.Table;
  * 
  */
 @Entity
-@Table(name = "reputations")
+@Table(name = "REPUTATIONS")
 public class Reputation implements Serializable {
 
 	private static final long	serialVersionUID	= 1L;
