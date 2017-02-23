@@ -30,16 +30,16 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 })
 public class BarConfiguration {
 
-	@Value("${com.dbs.bar.starter.config.driverClassName}")
+	@Value("${APP_DRIVER_CLASS_NAME:com.dbs.bar.starter.config.driverClassName}")
 	private String	driverClassName;
 
-	@Value("${com.dbs.bar.starter.config.url}")
+	@Value("${APP_URL:com.dbs.bar.starter.config.url}")
 	private String	url;
 
-	@Value("${com.dbs.bar.starter.config.username}")
+	@Value("${APP_USERNAME:com.dbs.bar.starter.config.username}")
 	private String	username;
 
-	@Value("${com.dbs.bar.starter.config.password}")
+	@Value("${APP_PASSWORD:com.dbs.bar.starter.config.password}")
 	private String	password;
 
 	@Bean
