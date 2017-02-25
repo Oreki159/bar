@@ -16,7 +16,7 @@ public class RestExceptionHandler {
 
 	@ExceptionHandler(RuntimeException.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-	public void processRuntimeException() {
+	public void processRuntimeException(RuntimeException ex) {
 
 	}
 

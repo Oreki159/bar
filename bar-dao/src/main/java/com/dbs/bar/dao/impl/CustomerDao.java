@@ -50,15 +50,21 @@ public class CustomerDao implements ICustomerDao {
 	}
 
 	private CustomerDto parseEntityToDto(Customer customer) {
-		CustomerDto customerDto = new CustomerDto();
-		BeanUtils.copyProperties(customer, customerDto);
-		return customerDto;
+		if (customer != null) {
+			CustomerDto customerDto = new CustomerDto();
+			BeanUtils.copyProperties(customer, customerDto);
+			return customerDto;
+		}
+		return null;
 	}
 
 	private Customer parseDtoToEntity(CustomerDto customerDto) {
-		Customer customer = new Customer();
-		BeanUtils.copyProperties(customerDto, customer);
-		return customer;
+		if (customerDto != null) {
+			Customer customer = new Customer();
+			BeanUtils.copyProperties(customerDto, customer);
+			return customer;
+		}
+		return null;
 	}
 
 }

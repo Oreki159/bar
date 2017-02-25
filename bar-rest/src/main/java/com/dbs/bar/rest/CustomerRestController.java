@@ -39,7 +39,7 @@ public class CustomerRestController {
 	}
 
 	@RequestMapping(path = "security/api/login", method = RequestMethod.POST)
-	public void login(CustomerDto customerDto) {
+	public void login(@RequestBody CustomerDto customerDto) {
 		CustomerDto customerLogged = customerService.login(customerDto);
 		if (customerLogged != null) {
 			((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse().setHeader(TOKEN, UUID.randomUUID().toString());
