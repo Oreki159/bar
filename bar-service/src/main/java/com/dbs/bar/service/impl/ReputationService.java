@@ -9,6 +9,12 @@ import com.dbs.bar.dao.IReputationDao;
 import com.dbs.bar.dto.ReputationDto;
 import com.dbs.bar.service.IReputationService;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 @Service
 public class ReputationService implements IReputationService {
 

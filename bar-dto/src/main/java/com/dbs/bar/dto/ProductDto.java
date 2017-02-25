@@ -16,6 +16,8 @@ public class ProductDto implements Serializable {
 
 	private Integer				categoryId;
 
+	private CategoryDto			category;
+
 	public Integer getProductId() {
 		return productId;
 	}
@@ -54,6 +56,14 @@ public class ProductDto implements Serializable {
 
 	public void setCategoryId(Integer categoryId) {
 		this.categoryId = categoryId;
+	}
+
+	public CategoryDto getCategory() {
+		return category;
+	}
+
+	public void setCategory(CategoryDto category) {
+		this.category = category;
 	}
 
 }

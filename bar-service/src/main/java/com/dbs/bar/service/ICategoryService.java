@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.dbs.bar.dto.CategoryDto;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 public interface ICategoryService {
 
 	void create(CategoryDto categoryDto);

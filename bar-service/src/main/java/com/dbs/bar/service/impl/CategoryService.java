@@ -9,6 +9,12 @@ import com.dbs.bar.dao.ICategoryDao;
 import com.dbs.bar.dto.CategoryDto;
 import com.dbs.bar.service.ICategoryService;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 @Service
 public class CategoryService implements ICategoryService {
 

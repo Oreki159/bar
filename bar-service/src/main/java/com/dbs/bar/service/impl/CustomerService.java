@@ -9,6 +9,12 @@ import com.dbs.bar.dao.ICustomerDao;
 import com.dbs.bar.dto.CustomerDto;
 import com.dbs.bar.service.ICustomerService;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 @Service
 public class CustomerService implements ICustomerService {
 

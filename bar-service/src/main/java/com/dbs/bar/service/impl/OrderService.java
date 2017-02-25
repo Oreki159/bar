@@ -9,6 +9,12 @@ import com.dbs.bar.dto.OrderDetailDto;
 import com.dbs.bar.dto.OrderDto;
 import com.dbs.bar.service.IOrderService;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 @Service
 public class OrderService implements IOrderService {
 

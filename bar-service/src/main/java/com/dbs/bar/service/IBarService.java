@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.dbs.bar.dto.BarDto;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 public interface IBarService {
 
 	void create(BarDto barDto);

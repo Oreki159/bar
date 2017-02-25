@@ -9,6 +9,12 @@ import com.dbs.bar.dao.IProductDao;
 import com.dbs.bar.dto.ProductDto;
 import com.dbs.bar.service.IProductService;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 @Service
 public class ProductService implements IProductService {
 
@@ -28,6 +34,11 @@ public class ProductService implements IProductService {
 	@Override
 	public void delete(ProductDto productDto) {
 		productDao.delete(productDto);
+	}
+
+	@Override
+	public ProductDto findById(Integer id) {
+		return productDao.findById(id);
 	}
 
 	@Override

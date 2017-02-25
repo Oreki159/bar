@@ -22,6 +22,8 @@ public class CatalogDto implements Serializable {
 
 	private Integer				productId;
 
+	private ProductDto			product;
+
 	public Integer getCatalogId() {
 		return catalogId;
 	}
@@ -76,6 +78,14 @@ public class CatalogDto implements Serializable {
 
 	public void setProductId(Integer productId) {
 		this.productId = productId;
+	}
+
+	public ProductDto getProduct() {
+		return product;
+	}
+
+	public void setProduct(ProductDto product) {
+		this.product = product;
 	}
 
 }

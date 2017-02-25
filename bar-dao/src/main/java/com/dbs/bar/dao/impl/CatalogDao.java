@@ -13,6 +13,12 @@ import com.dbs.bar.dto.CatalogDto;
 import com.dbs.bar.entity.Catalog;
 import com.dbs.bar.repository.CatalogRepository;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 @Repository
 public class CatalogDao implements ICatalogDao {
 

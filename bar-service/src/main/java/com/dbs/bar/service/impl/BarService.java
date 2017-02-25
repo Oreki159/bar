@@ -9,6 +9,12 @@ import com.dbs.bar.dao.IBarDao;
 import com.dbs.bar.dto.BarDto;
 import com.dbs.bar.service.IBarService;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 @Service
 public class BarService implements IBarService {
 

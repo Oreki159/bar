@@ -13,6 +13,12 @@ import com.dbs.bar.dto.ProductDto;
 import com.dbs.bar.entity.Product;
 import com.dbs.bar.repository.ProductRepository;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 @Repository
 public class ProductDao implements IProductDao {
 
@@ -41,6 +47,11 @@ public class ProductDao implements IProductDao {
 		productRepository.save(product);
 	}
 
+	@Override
+	public ProductDto findById(Integer id) {
+		return parseEntityToDto(productRepository.findOne(id));
+	}
+		
 	@Override
 	public List<ProductDto> findAll() {
 		List<Product> products = productRepository.findAll();

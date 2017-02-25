@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.dbs.bar.dto.CustomerDto;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 public interface ICustomerService {
 
 	void create(CustomerDto customerDto);
@@ -13,7 +19,7 @@ public interface ICustomerService {
 	void delete(CustomerDto customerDto);
 
 	CustomerDto login(CustomerDto customerDto);
-	
+
 	List<CustomerDto> findAll();
-	
+
 }
