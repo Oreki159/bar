@@ -16,12 +16,12 @@
 			<groupId>com.dbs.bar.repository</groupId>
 			<artifactId>bar-repository</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.dbs.bar.dto</groupId>
 			<artifactId>bar-dto</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>

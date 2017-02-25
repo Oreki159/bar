@@ -11,12 +11,12 @@
 	<name>bar-repository</name>
 
 	<dependencies>
-		
+
 		<dependency>
 			<groupId>com.dbs.bar.entity</groupId>
 			<artifactId>bar-entity</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
