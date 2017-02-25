@@ -16,6 +16,8 @@ import com.dbs.bar.repository.ReputationRepository;
 @Repository
 public class ReputationDao implements IReputationDao {
 
+	private static final Integer	ENABLE	= 1;
+
 	private static final Integer	DISABLE	= 0;
 
 	@Resource
@@ -23,6 +25,7 @@ public class ReputationDao implements IReputationDao {
 
 	@Override
 	public void create(ReputationDto reputationDto) {
+		reputationDto.setState(ENABLE);
 		reputationRepository.save(parseDtoToEntity(reputationDto));
 	}
 

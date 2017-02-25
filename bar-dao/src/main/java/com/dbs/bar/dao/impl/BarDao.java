@@ -16,6 +16,8 @@ import com.dbs.bar.repository.BarRepository;
 @Repository
 public class BarDao implements IBarDao {
 
+	private static final Integer	ENABLE	= 1;
+
 	private static final Integer	DISABLE	= 0;
 
 	@Resource
@@ -23,6 +25,7 @@ public class BarDao implements IBarDao {
 
 	@Override
 	public void create(BarDto barDto) {
+		barDto.setState(ENABLE);
 		barRepository.save(parseDtoToEntity(barDto));
 	}
 

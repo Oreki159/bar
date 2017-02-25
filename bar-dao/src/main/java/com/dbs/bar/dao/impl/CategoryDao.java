@@ -16,6 +16,8 @@ import com.dbs.bar.repository.CategoryRepository;
 @Repository
 public class CategoryDao implements ICategoryDao {
 
+	private static final Integer	ENABLE	= 1;
+
 	private static final Integer	DISABLE	= 0;
 
 	@Resource
@@ -23,6 +25,7 @@ public class CategoryDao implements ICategoryDao {
 
 	@Override
 	public void create(CategoryDto categoryDto) {
+		categoryDto.setState(ENABLE);
 		categoryRepository.save(parseDtoToEntity(categoryDto));
 	}
 

@@ -16,6 +16,8 @@ import com.dbs.bar.repository.OrderRepository;
 @Repository
 public class OrderDao implements IOrderDao {
 
+	private static final Integer	ENABLE	= 1;
+
 	private static final Integer	DISABLE	= 0;
 
 	@Resource
@@ -23,6 +25,7 @@ public class OrderDao implements IOrderDao {
 
 	@Override
 	public OrderDto create(OrderDto orderDto) {
+		orderDto.setState(ENABLE);
 		return parseEntityToDto(orderRepository.save(parseDtoToEntity(orderDto)));
 	}
 

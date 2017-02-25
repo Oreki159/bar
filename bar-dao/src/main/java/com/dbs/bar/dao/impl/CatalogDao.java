@@ -16,6 +16,8 @@ import com.dbs.bar.repository.CatalogRepository;
 @Repository
 public class CatalogDao implements ICatalogDao {
 
+	private static final Integer	ENABLE	= 1;
+
 	private static final Integer	DISABLE	= 0;
 
 	@Resource
@@ -23,6 +25,7 @@ public class CatalogDao implements ICatalogDao {
 
 	@Override
 	public void create(CatalogDto catalogDto) {
+		catalogDto.setState(ENABLE);
 		catalogRepository.save(parseDtoToEntity(catalogDto));
 	}
 

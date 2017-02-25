@@ -16,6 +16,8 @@ import com.dbs.bar.repository.CustomerRepository;
 @Repository
 public class CustomerDao implements ICustomerDao {
 
+	private static final Integer	ENABLE	= 1;
+
 	private static final Integer	DISABLE	= 0;
 
 	@Resource
@@ -23,6 +25,7 @@ public class CustomerDao implements ICustomerDao {
 
 	@Override
 	public void create(CustomerDto customerDto) {
+		customerDto.setState(ENABLE);
 		customerRepository.save(parseDtoToEntity(customerDto));
 	}
 

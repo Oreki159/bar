@@ -16,6 +16,8 @@ import com.dbs.bar.repository.ProductRepository;
 @Repository
 public class ProductDao implements IProductDao {
 
+	private static final Integer	ENABLE	= 1;
+
 	private static final Integer	DISABLE	= 0;
 
 	@Resource
@@ -23,6 +25,7 @@ public class ProductDao implements IProductDao {
 
 	@Override
 	public void create(ProductDto productDto) {
+		productDto.setState(ENABLE);
 		productRepository.save(parseDtoToEntity(productDto));
 	}
 
