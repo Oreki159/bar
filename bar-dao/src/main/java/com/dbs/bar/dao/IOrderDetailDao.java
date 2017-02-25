@@ -11,7 +11,9 @@ public interface IOrderDetailDao {
 	void update(OrderDetailDto orderDetailDto);
 
 	void delete(OrderDetailDto orderDetailDto);
-
+	
+	List<OrderDetailDto> findByOrderId(Integer orderId);
+	
 	List<OrderDetailDto> findAll();
 
 }

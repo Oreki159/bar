@@ -5,6 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.dbs.bar.starter.config.BarConfiguration;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 @SpringBootApplication(scanBasePackageClasses = {BarConfiguration.class})
 public class Application {
 

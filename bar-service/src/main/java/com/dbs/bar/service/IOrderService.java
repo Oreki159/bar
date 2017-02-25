@@ -12,4 +12,6 @@ public interface IOrderService {
 
 	void create(OrderDto orderDto);
 
+	OrderDto findById(Integer id);
+
 }

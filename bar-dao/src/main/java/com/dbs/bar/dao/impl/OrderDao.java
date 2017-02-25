@@ -42,8 +42,21 @@ public class OrderDao implements IOrderDao {
 	}
 
 	@Override
+	public OrderDto findById(Integer id) {
+		return parseEntityToDto(orderRepository.findOne(id));
+	}
+
+	@Override
+	public List<OrderDto> findByCustomerId(Integer customerId) {
+		return getOrders(orderRepository.findByCustomerId(customerId));
+	}
+
+	@Override
 	public List<OrderDto> findAll() {
-		List<Order> orders = orderRepository.findAll();
+		return getOrders(orderRepository.findAll());
+	}
+
+	private List<OrderDto> getOrders(List<Order> orders) {
 		List<OrderDto> ordersDto = new ArrayList<>(0);
 		for (Order order : orders) {
 			ordersDto.add(parseEntityToDto(order));

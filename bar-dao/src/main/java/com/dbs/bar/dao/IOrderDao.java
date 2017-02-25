@@ -12,6 +12,10 @@ public interface IOrderDao {
 
 	void delete(OrderDto orderDto);
 
+	OrderDto findById(Integer id);
+
+	List<OrderDto> findByCustomerId(Integer customerId);
+
 	List<OrderDto> findAll();
 
 }

@@ -20,6 +20,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.dbs.bar.starter.config.properties.BarDbProperties;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 @Configuration
 @EnableConfigurationProperties(value = BarDbProperties.class)
 @PropertySources({

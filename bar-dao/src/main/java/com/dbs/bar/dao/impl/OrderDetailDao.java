@@ -35,15 +35,23 @@ public class OrderDetailDao implements IOrderDetailDao {
 	}
 
 	@Override
+	public List<OrderDetailDto> findByOrderId(Integer orderId) {
+		return getOrderDetails(orderDetailRepository.findByOrderId(orderId));
+	}
+
+	@Override
 	public List<OrderDetailDto> findAll() {
-		List<OrderDetail> orderDetails = orderDetailRepository.findAll();
+		return getOrderDetails(orderDetailRepository.findAll());
+	}
+
+	private List<OrderDetailDto> getOrderDetails(List<OrderDetail> orderDetails){
 		List<OrderDetailDto> orderDetailsDto = new ArrayList<>(0);
 		for (OrderDetail orderDetail : orderDetails) {
 			orderDetailsDto.add(parseEntityToDto(orderDetail));
 		}
-		return orderDetailsDto;
+		return orderDetailsDto;	
 	}
-
+	
 	private OrderDetailDto parseEntityToDto(OrderDetail orderDetail) {
 		OrderDetailDto orderDetailDto = new OrderDetailDto();
 		BeanUtils.copyProperties(orderDetail, orderDetailDto);

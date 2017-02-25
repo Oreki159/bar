@@ -34,4 +34,11 @@ public class OrderService implements IOrderService {
 
 	}
 
+	@Override
+	public OrderDto findById(Integer id) {
+		OrderDto order = orderDao.findById(id);
+		order.setOrderDetails(orderDetailDao.findByOrderId(order.getOrderId()));
+		return order;
+	}
+
 }

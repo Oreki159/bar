@@ -2,6 +2,12 @@ package com.dbs.bar.starter.config.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+/**
+ * 
+ * @author Jorge Luis Alvarez A.
+ * @version 1.0.0
+ *
+ */
 @ConfigurationProperties(prefix = "com.dbs.bar.starter.config")
 public class BarDbProperties {
 
