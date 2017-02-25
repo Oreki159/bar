@@ -17,8 +17,8 @@ public class OrderRestController {
 	private IOrderService orderService;
 
 	@RequestMapping(path = "/create", method = RequestMethod.POST)
-	public void create(@RequestBody OrderDto OrderDto) {
-		orderService.create(OrderDto);
+	public void create(@RequestBody OrderDto orderDto) {
+		orderService.create(orderDto);
 	}
 
 }

@@ -23,17 +23,17 @@ public class CategoryRestController {
 		categoryService.create(categoryDto);
 	}
 
-	@RequestMapping(path = "/update", method = RequestMethod.POST)
+	@RequestMapping(path = "/update", method = RequestMethod.PUT)
 	public void update(@RequestBody CategoryDto categoryDto) {
 		categoryService.update(categoryDto);
 	}
 
-	@RequestMapping(path = "/delete", method = RequestMethod.POST)
+	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
 	public void delete(@RequestBody CategoryDto categoryDto) {
 		categoryService.create(categoryDto);
 	}
 
-	@RequestMapping(path = "/findAll", method = RequestMethod.POST)
+	@RequestMapping(path = "/findAll", method = RequestMethod.GET)
 	public List<CategoryDto> findAll() {
 		return categoryService.findAll();
 	}

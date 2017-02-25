@@ -23,17 +23,17 @@ public class ProductRestController {
 		productService.create(productDto);
 	}
 
-	@RequestMapping(path = "/update", method = RequestMethod.POST)
+	@RequestMapping(path = "/update", method = RequestMethod.PUT)
 	public void update(@RequestBody ProductDto productDto) {
 		productService.update(productDto);
 	}
 
-	@RequestMapping(path = "/delete", method = RequestMethod.POST)
+	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
 	public void delete(@RequestBody ProductDto productDto) {
 		productService.delete(productDto);
 	}
 
-	@RequestMapping(path = "/findAll", method = RequestMethod.POST)
+	@RequestMapping(path = "/findAll", method = RequestMethod.GET)
 	public List<ProductDto> findAll() {
 		return productService.findAll();
 	}

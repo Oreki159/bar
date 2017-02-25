@@ -23,17 +23,17 @@ public class ReputationRestController {
 		reputationService.create(reputationDto);
 	}
 
-	@RequestMapping(path = "/update", method = RequestMethod.POST)
+	@RequestMapping(path = "/update", method = RequestMethod.PUT)
 	public void update(@RequestBody ReputationDto reputationDto) {
 		reputationService.update(reputationDto);
 	}
 
-	@RequestMapping(path = "/delete", method = RequestMethod.POST)
+	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
 	public void delete(@RequestBody ReputationDto reputationDto) {
 		reputationService.create(reputationDto);
 	}
 
-	@RequestMapping(path = "/findAll", method = RequestMethod.POST)
+	@RequestMapping(path = "/findAll", method = RequestMethod.GET)
 	public List<ReputationDto> findAll() {
 		return reputationService.findAll();
 	}

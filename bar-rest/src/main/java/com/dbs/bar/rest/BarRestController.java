@@ -23,17 +23,17 @@ public class BarRestController {
 		barService.create(barDto);
 	}
 
-	@RequestMapping(path = "/update", method = RequestMethod.POST)
+	@RequestMapping(path = "/update", method = RequestMethod.PUT)
 	public void update(@RequestBody BarDto barDto) {
 		barService.update(barDto);
 	}
 
-	@RequestMapping(path = "/delete", method = RequestMethod.POST)
+	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
 	public void delete(@RequestBody BarDto barDto) {
 		barService.create(barDto);
 	}
 
-	@RequestMapping(path = "/findAll", method = RequestMethod.POST)
+	@RequestMapping(path = "/findAll", method = RequestMethod.GET)
 	public List<BarDto> findAll() {
 		return barService.findAll();
 	}

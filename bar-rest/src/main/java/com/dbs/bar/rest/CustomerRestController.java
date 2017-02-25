@@ -23,17 +23,17 @@ public class CustomerRestController {
 		customerService.create(customerDto);
 	}
 
-	@RequestMapping(path = "/update", method = RequestMethod.POST)
+	@RequestMapping(path = "/update", method = RequestMethod.PUT)
 	public void update(@RequestBody CustomerDto customerDto) {
 		customerService.update(customerDto);
 	}
 
-	@RequestMapping(path = "/delete", method = RequestMethod.POST)
+	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
 	public void delete(@RequestBody CustomerDto customerDto) {
 		customerService.create(customerDto);
 	}
 
-	@RequestMapping(path = "/findAll", method = RequestMethod.POST)
+	@RequestMapping(path = "/findAll", method = RequestMethod.GET)
 	public List<CustomerDto> findAll() {
 		return customerService.findAll();
 	}

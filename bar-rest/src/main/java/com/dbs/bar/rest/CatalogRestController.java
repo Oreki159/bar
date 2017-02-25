@@ -23,17 +23,17 @@ public class CatalogRestController {
 		catalogService.create(catalogDto);
 	}
 
-	@RequestMapping(path = "/update", method = RequestMethod.POST)
+	@RequestMapping(path = "/update", method = RequestMethod.PUT)
 	public void update(@RequestBody CatalogDto catalogDto) {
 		catalogService.update(catalogDto);
 	}
 
-	@RequestMapping(path = "/delete", method = RequestMethod.POST)
+	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
 	public void delete(@RequestBody CatalogDto catalogDto) {
 		catalogService.create(catalogDto);
 	}
 
-	@RequestMapping(path = "/findAll", method = RequestMethod.POST)
+	@RequestMapping(path = "/findAll", method = RequestMethod.GET)
 	public List<CatalogDto> findAll() {
 		return catalogService.findAll();
 	}
