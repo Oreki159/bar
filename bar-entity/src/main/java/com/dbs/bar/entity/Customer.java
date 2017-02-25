@@ -32,8 +32,6 @@ public class Customer implements Serializable {
 
 	private Integer				state;
 
-	private String				username;
-
 	public Customer() {}
 
 	public Integer getCustomerId() {
@@ -74,14 +72,6 @@ public class Customer implements Serializable {
 
 	public void setState(Integer state) {
 		this.state = state;
-	}
-
-	public String getUsername() {
-		return this.username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
 	}
 
 }

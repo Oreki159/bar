@@ -16,8 +16,6 @@ public class CustomerDto implements Serializable {
 
 	private Integer				state;
 
-	private String				username;
-
 	public Integer getCustomerId() {
 		return customerId;
 	}
@@ -56,14 +54,6 @@ public class CustomerDto implements Serializable {
 
 	public void setState(Integer state) {
 		this.state = state;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
 	}
 
 }
