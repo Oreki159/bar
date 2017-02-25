@@ -42,8 +42,16 @@ public class CatalogDao implements ICatalogDao {
 	}
 
 	@Override
+	public List<CatalogDto> findByBar(CatalogDto catalogDto) {
+		return getCatalogs(catalogRepository.findByBarId(catalogDto.getBarId()));
+	}
+
+	@Override
 	public List<CatalogDto> findAll() {
-		List<Catalog> catalogs = catalogRepository.findAll();
+		return getCatalogs(catalogRepository.findAll());
+	}
+
+	private List<CatalogDto> getCatalogs(List<Catalog> catalogs) {
 		List<CatalogDto> catalogsDto = new ArrayList<>(0);
 		for (Catalog catalog : catalogs) {
 			catalogsDto.add(parseEntityToDto(catalog));

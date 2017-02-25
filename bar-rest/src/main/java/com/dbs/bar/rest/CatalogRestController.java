@@ -33,6 +33,11 @@ public class CatalogRestController {
 		catalogService.delete(catalogDto);
 	}
 
+	@RequestMapping(path = "/findByBar", method = RequestMethod.GET)
+	public List<CatalogDto> findByBar(@RequestBody CatalogDto catalogDto) {
+		return catalogService.findByBar(catalogDto);
+	}
+	
 	@RequestMapping(path = "/findAll", method = RequestMethod.GET)
 	public List<CatalogDto> findAll() {
 		return catalogService.findAll();

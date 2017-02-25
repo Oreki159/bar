@@ -11,6 +11,8 @@ public interface ICatalogDao {
 	void update(CatalogDto catalogDto);
 
 	void delete(CatalogDto catalogDto);
+	
+	List<CatalogDto> findByBar(CatalogDto catalogDto);
 
 	List<CatalogDto> findAll();
 

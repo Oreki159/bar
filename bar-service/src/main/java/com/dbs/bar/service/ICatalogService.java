@@ -12,6 +12,8 @@ public interface ICatalogService {
 
 	void delete(CatalogDto catalogDto);
 
+	List<CatalogDto> findByBar(CatalogDto catalogDto);
+
 	List<CatalogDto> findAll();
-	
+
 }
