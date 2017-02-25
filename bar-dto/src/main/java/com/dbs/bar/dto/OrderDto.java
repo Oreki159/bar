@@ -10,6 +10,8 @@ public class OrderDto implements Serializable {
 
 	private Integer					orderId;
 
+	private Integer					customerId;
+
 	private Date					orderDate;
 
 	private String					qrcode;
@@ -24,6 +26,14 @@ public class OrderDto implements Serializable {
 
 	public void setOrderId(Integer orderId) {
 		this.orderId = orderId;
+	}
+
+	public Integer getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
 	}
 
 	public Date getOrderDate() {

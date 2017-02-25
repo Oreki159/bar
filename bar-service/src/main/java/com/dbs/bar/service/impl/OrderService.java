@@ -2,7 +2,6 @@ package com.dbs.bar.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.dbs.bar.dao.IOrderDao;
 import com.dbs.bar.dao.IOrderDetailDao;
@@ -20,7 +19,6 @@ public class OrderService implements IOrderService {
 	private IOrderDetailDao	orderDetailDao;
 
 	@Override
-	@Transactional
 	public void create(OrderDto orderDto) {
 		OrderDto order = orderDao.create(orderDto);
 		for (OrderDetailDto orderDetailDto : orderDto.getOrderDetails()) {
