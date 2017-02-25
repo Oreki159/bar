@@ -30,7 +30,7 @@ public class CategoryRestController {
 
 	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
 	public void delete(@RequestBody CategoryDto categoryDto) {
-		categoryService.create(categoryDto);
+		categoryService.delete(categoryDto);
 	}
 
 	@RequestMapping(path = "/findAll", method = RequestMethod.GET)
