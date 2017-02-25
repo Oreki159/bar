@@ -2,12 +2,14 @@ package com.dbs.bar.starter.config;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
+import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -30,25 +32,36 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 })
 public class BarConfiguration {
 
-	@Value("${APP_DRIVER_CLASS_NAME:com.dbs.bar.starter.config.driverClassName}")
-	private String	driverClassName;
+	private static final String	APP_DRIVER_CLASS_NAME	= "APP_DRIVER_CLASS_NAME";
 
-	@Value("${APP_URL:com.dbs.bar.starter.config.url}")
-	private String	url;
+	private static final String	APP_URL					= "APP_URL";
 
-	@Value("${APP_USERNAME:com.dbs.bar.starter.config.username}")
-	private String	username;
+	private static final String	APP_USERNAME			= "APP_USERNAME";
 
-	@Value("${APP_PASSWORD:com.dbs.bar.starter.config.password}")
-	private String	password;
+	private static final String	APP_PASSWORD			= "APP_PASSWORD";
+
+	@Value("${com.dbs.bar.starter.config.driverClassName}")
+	private String				driverClassName;
+
+	@Value("${com.dbs.bar.starter.config.url}")
+	private String				url;
+
+	@Value("${com.dbs.bar.starter.config.username}")
+	private String				username;
+
+	@Value("${com.dbs.bar.starter.config.password}")
+	private String				password;
+
+	@Autowired
+	private Environment			environment;
 
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName(driverClassName);
-		dataSource.setUrl(url);
-		dataSource.setUsername(username);
-		dataSource.setPassword(password);
+		dataSource.setDriverClassName(environment.getProperty(APP_DRIVER_CLASS_NAME, driverClassName));
+		dataSource.setUrl(environment.getProperty(APP_URL, url));
+		dataSource.setUsername(environment.getProperty(APP_USERNAME, username));
+		dataSource.setPassword(environment.getProperty(APP_PASSWORD, password));
 		return dataSource;
 	}
 
