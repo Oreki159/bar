@@ -62,7 +62,7 @@
 						<failOnMissingWebXml>false</failOnMissingWebXml>
 					</configuration>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-maven-plugin</artifactId>
@@ -132,7 +132,7 @@
 				<artifactId>eclipselink</artifactId>
 				<version>${eclipselink.version}</version>
 			</dependency>
-		
+
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>
