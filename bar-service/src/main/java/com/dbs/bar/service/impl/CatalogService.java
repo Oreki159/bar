@@ -31,8 +31,8 @@ public class CatalogService implements ICatalogService {
 	}
 
 	@Override
-	public List<CatalogDto> findByBar(CatalogDto catalogDto) {
-		return catalogDao.findByBar(catalogDto);
+	public List<CatalogDto> findByBarId(Integer barId) {
+		return catalogDao.findByBarId(barId);
 	}
 
 	@Override

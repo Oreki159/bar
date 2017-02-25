@@ -42,8 +42,8 @@ public class CatalogDao implements ICatalogDao {
 	}
 
 	@Override
-	public List<CatalogDto> findByBar(CatalogDto catalogDto) {
-		return getCatalogs(catalogRepository.findByBarId(catalogDto.getBarId()));
+	public List<CatalogDto> findByBarId(Integer barId) {
+		return getCatalogs(catalogRepository.findByBarId(barId));
 	}
 
 	@Override

@@ -12,7 +12,7 @@ public interface ICatalogService {
 
 	void delete(CatalogDto catalogDto);
 
-	List<CatalogDto> findByBar(CatalogDto catalogDto);
+	List<CatalogDto> findByBarId(Integer barId);
 
 	List<CatalogDto> findAll();
 
