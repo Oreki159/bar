@@ -16,12 +16,14 @@ import com.dbs.bar.repository.OrderRepository;
 @Repository
 public class OrderDao implements IOrderDao {
 
+	private static final Integer	DISABLE	= 0;
+
 	@Resource
-	private OrderRepository orderRepository;
+	private OrderRepository			orderRepository;
 
 	@Override
-	public void create(OrderDto orderDto) {
-		orderRepository.save(parseDtoToEntity(orderDto));
+	public OrderDto create(OrderDto orderDto) {
+		return parseEntityToDto(orderRepository.save(parseDtoToEntity(orderDto)));
 	}
 
 	@Override
@@ -31,7 +33,9 @@ public class OrderDao implements IOrderDao {
 
 	@Override
 	public void delete(OrderDto orderDto) {
-		orderRepository.delete(orderDto.getOrderId());
+		Order order = orderRepository.findOne(orderDto.getOrderId());
+		order.setState(DISABLE);
+		orderRepository.save(order);
 	}
 
 	@Override

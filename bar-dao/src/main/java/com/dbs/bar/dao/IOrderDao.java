@@ -6,7 +6,7 @@ import com.dbs.bar.dto.OrderDto;
 
 public interface IOrderDao {
 
-	void create(OrderDto orderDto);
+	OrderDto create(OrderDto orderDto);
 
 	void update(OrderDto orderDto);
 
