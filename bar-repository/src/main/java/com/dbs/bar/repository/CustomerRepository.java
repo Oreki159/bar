@@ -6,4 +6,6 @@ import com.dbs.bar.entity.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
+	Customer findByEmailAndPass(String email, String pass);
+	
 }

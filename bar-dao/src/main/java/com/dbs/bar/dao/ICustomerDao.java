@@ -11,6 +11,8 @@ public interface ICustomerDao {
 	void update(CustomerDto customerDto);
 
 	void delete(CustomerDto customerDto);
+	
+	CustomerDto login(CustomerDto customerDto);
 
 	List<CustomerDto> findAll();
 

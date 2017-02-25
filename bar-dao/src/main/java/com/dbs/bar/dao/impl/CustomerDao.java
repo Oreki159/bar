@@ -35,6 +35,11 @@ public class CustomerDao implements ICustomerDao {
 	}
 
 	@Override
+	public CustomerDto login(CustomerDto customerDto) {
+		return parseEntityToDto(customerRepository.findByEmailAndPass(customerDto.getEmail(), customerDto.getPass()));
+	}
+
+	@Override
 	public List<CustomerDto> findAll() {
 		List<Customer> customers = customerRepository.findAll();
 		List<CustomerDto> customersDto = new ArrayList<>(0);

@@ -33,6 +33,8 @@
 		<jackson.version>2.8.1</jackson.version>
 		<javax.servlet-api.version>3.1.0</javax.servlet-api.version>
 		<joda-time.version>2.9.4</joda-time.version>
+
+		<aspectjweaver.version>1.8.9</aspectjweaver.version>
 		<org.springframework.version>4.3.4.RELEASE</org.springframework.version>
 		<org.springframework.boot.version>1.4.2.RELEASE</org.springframework.boot.version>
 		<org.springframework.data.commons.version>1.12.5.RELEASE</org.springframework.data.commons.version>
@@ -168,6 +170,12 @@
 				<groupId>joda-time</groupId>
 				<artifactId>joda-time</artifactId>
 				<version>${joda-time.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectjweaver.version}</version>
 			</dependency>
 
 			<dependency>

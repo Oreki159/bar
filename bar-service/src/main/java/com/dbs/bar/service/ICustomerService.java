@@ -12,6 +12,8 @@ public interface ICustomerService {
 
 	void delete(CustomerDto customerDto);
 
+	CustomerDto login(CustomerDto customerDto);
+	
 	List<CustomerDto> findAll();
 	
 }

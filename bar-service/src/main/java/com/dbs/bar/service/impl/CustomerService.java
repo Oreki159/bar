@@ -31,6 +31,11 @@ public class CustomerService implements ICustomerService {
 	}
 
 	@Override
+	public CustomerDto login(CustomerDto customerDto) {
+		return customerDao.login(customerDto);
+	}
+
+	@Override
 	public List<CustomerDto> findAll() {
 		return customerDao.findAll();
 	}
