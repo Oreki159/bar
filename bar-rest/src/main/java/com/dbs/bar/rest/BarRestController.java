@@ -30,7 +30,7 @@ public class BarRestController {
 
 	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
 	public void delete(@RequestBody BarDto barDto) {
-		barService.create(barDto);
+		barService.delete(barDto);
 	}
 
 	@RequestMapping(path = "/findAll", method = RequestMethod.GET)

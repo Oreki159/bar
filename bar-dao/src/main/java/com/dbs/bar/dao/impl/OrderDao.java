@@ -31,7 +31,7 @@ public class OrderDao implements IOrderDao {
 
 	@Override
 	public void delete(OrderDto orderDto) {
-		orderRepository.delete(parseDtoToEntity(orderDto));
+		orderRepository.delete(orderDto.getOrderId());
 	}
 
 	@Override

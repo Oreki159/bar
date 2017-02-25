@@ -31,7 +31,7 @@ public class CategoryDao implements ICategoryDao {
 
 	@Override
 	public void delete(CategoryDto categoryDto) {
-		categoryRepository.delete(parseDtoToEntity(categoryDto));
+		categoryRepository.delete(categoryDto.getCategoryId());
 	}
 
 	@Override

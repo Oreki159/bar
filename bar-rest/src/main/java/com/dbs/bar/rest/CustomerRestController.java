@@ -30,7 +30,7 @@ public class CustomerRestController {
 
 	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
 	public void delete(@RequestBody CustomerDto customerDto) {
-		customerService.create(customerDto);
+		customerService.delete(customerDto);
 	}
 
 	@RequestMapping(path = "/findAll", method = RequestMethod.GET)

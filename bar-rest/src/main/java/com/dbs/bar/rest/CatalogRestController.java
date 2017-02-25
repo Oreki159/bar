@@ -30,7 +30,7 @@ public class CatalogRestController {
 
 	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
 	public void delete(@RequestBody CatalogDto catalogDto) {
-		catalogService.create(catalogDto);
+		catalogService.delete(catalogDto);
 	}
 
 	@RequestMapping(path = "/findAll", method = RequestMethod.GET)

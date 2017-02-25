@@ -31,7 +31,7 @@ public class CatalogDao implements ICatalogDao {
 
 	@Override
 	public void delete(CatalogDto catalogDto) {
-		catalogRepository.delete(parseDtoToEntity(catalogDto));
+		catalogRepository.delete(catalogDto.getCatalogId());
 	}
 
 	@Override

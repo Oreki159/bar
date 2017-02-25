@@ -30,7 +30,7 @@ public class ReputationRestController {
 
 	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
 	public void delete(@RequestBody ReputationDto reputationDto) {
-		reputationService.create(reputationDto);
+		reputationService.delete(reputationDto);
 	}
 
 	@RequestMapping(path = "/findAll", method = RequestMethod.GET)

@@ -31,7 +31,7 @@ public class OrderDetailDao implements IOrderDetailDao {
 
 	@Override
 	public void delete(OrderDetailDto orderDetailDto) {
-		orderDetailRepository.delete(parseDtoToEntity(orderDetailDto));
+		orderDetailRepository.delete(orderDetailDto.getOrderDetailId());
 	}
 
 	@Override

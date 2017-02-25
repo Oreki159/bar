@@ -31,7 +31,7 @@ public class BarDao implements IBarDao {
 
 	@Override
 	public void delete(BarDto barDto) {
-		barRepository.delete(parseDtoToEntity(barDto));
+		barRepository.delete(barDto.getBarId());
 	}
 
 	@Override

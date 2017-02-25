@@ -31,7 +31,7 @@ public class ReputationDao implements IReputationDao {
 
 	@Override
 	public void delete(ReputationDto reputationDto) {
-		reputationRepository.delete(parseDtoToEntity(reputationDto));
+		reputationRepository.delete(reputationDto.getReputationId());
 	}
 
 	@Override

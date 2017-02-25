@@ -31,7 +31,7 @@ public class CustomerDao implements ICustomerDao {
 
 	@Override
 	public void delete(CustomerDto customerDto) {
-		customerRepository.delete(parseDtoToEntity(customerDto));
+		customerRepository.delete(customerDto.getCustomerId());
 	}
 
 	@Override

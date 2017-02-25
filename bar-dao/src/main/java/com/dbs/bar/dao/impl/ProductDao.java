@@ -31,7 +31,7 @@ public class ProductDao implements IProductDao {
 
 	@Override
 	public void delete(ProductDto productDto) {
-		productRepository.delete(parseDtoToEntity(productDto));
+		productRepository.delete(productDto.getProductId());
 	}
 
 	@Override
