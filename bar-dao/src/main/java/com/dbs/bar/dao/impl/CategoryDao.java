@@ -16,8 +16,10 @@ import com.dbs.bar.repository.CategoryRepository;
 @Repository
 public class CategoryDao implements ICategoryDao {
 
+	private static final Integer	DISABLE	= 0;
+
 	@Resource
-	private CategoryRepository categoryRepository;
+	private CategoryRepository		categoryRepository;
 
 	@Override
 	public void create(CategoryDto categoryDto) {
@@ -31,7 +33,9 @@ public class CategoryDao implements ICategoryDao {
 
 	@Override
 	public void delete(CategoryDto categoryDto) {
-		categoryRepository.delete(categoryDto.getCategoryId());
+		Category category = categoryRepository.findOne(categoryDto.getCategoryId());
+		category.setState(DISABLE);
+		categoryRepository.save(category);
 	}
 
 	@Override

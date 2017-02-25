@@ -16,8 +16,10 @@ import com.dbs.bar.repository.CustomerRepository;
 @Repository
 public class CustomerDao implements ICustomerDao {
 
+	private static final Integer	DISABLE	= 0;
+
 	@Resource
-	private CustomerRepository customerRepository;
+	private CustomerRepository		customerRepository;
 
 	@Override
 	public void create(CustomerDto customerDto) {
@@ -31,7 +33,9 @@ public class CustomerDao implements ICustomerDao {
 
 	@Override
 	public void delete(CustomerDto customerDto) {
-		customerRepository.delete(customerDto.getCustomerId());
+		Customer customer = customerRepository.findOne(customerDto.getCustomerId());
+		customer.setState(DISABLE);
+		customerRepository.save(customer);
 	}
 
 	@Override

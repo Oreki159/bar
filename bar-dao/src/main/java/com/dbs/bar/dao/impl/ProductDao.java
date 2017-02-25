@@ -16,8 +16,10 @@ import com.dbs.bar.repository.ProductRepository;
 @Repository
 public class ProductDao implements IProductDao {
 
+	private static final Integer	DISABLE	= 0;
+
 	@Resource
-	private ProductRepository productRepository;
+	private ProductRepository		productRepository;
 
 	@Override
 	public void create(ProductDto productDto) {
@@ -31,7 +33,9 @@ public class ProductDao implements IProductDao {
 
 	@Override
 	public void delete(ProductDto productDto) {
-		productRepository.delete(productDto.getProductId());
+		Product product = productRepository.findOne(productDto.getProductId());
+		product.setState(DISABLE);
+		productRepository.save(product);
 	}
 
 	@Override

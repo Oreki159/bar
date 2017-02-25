@@ -16,8 +16,10 @@ import com.dbs.bar.repository.ReputationRepository;
 @Repository
 public class ReputationDao implements IReputationDao {
 
+	private static final Integer	DISABLE	= 0;
+
 	@Resource
-	private ReputationRepository reputationRepository;
+	private ReputationRepository	reputationRepository;
 
 	@Override
 	public void create(ReputationDto reputationDto) {
@@ -31,7 +33,9 @@ public class ReputationDao implements IReputationDao {
 
 	@Override
 	public void delete(ReputationDto reputationDto) {
-		reputationRepository.delete(reputationDto.getReputationId());
+		Reputation reputation = reputationRepository.findOne(reputationDto.getReputationId());
+		reputation.setState(DISABLE);
+		reputationRepository.save(reputation);
 	}
 
 	@Override

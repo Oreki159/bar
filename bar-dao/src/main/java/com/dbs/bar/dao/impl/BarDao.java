@@ -16,8 +16,10 @@ import com.dbs.bar.repository.BarRepository;
 @Repository
 public class BarDao implements IBarDao {
 
+	private static final Integer	DISABLE	= 0;
+
 	@Resource
-	private BarRepository barRepository;
+	private BarRepository			barRepository;
 
 	@Override
 	public void create(BarDto barDto) {
@@ -31,7 +33,9 @@ public class BarDao implements IBarDao {
 
 	@Override
 	public void delete(BarDto barDto) {
-		barRepository.delete(barDto.getBarId());
+		Bar bar = barRepository.findOne(barDto.getBarId());
+		bar.setState(DISABLE);
+		barRepository.save(bar);
 	}
 
 	@Override

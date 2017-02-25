@@ -16,8 +16,10 @@ import com.dbs.bar.repository.CatalogRepository;
 @Repository
 public class CatalogDao implements ICatalogDao {
 
+	private static final Integer	DISABLE	= 0;
+
 	@Resource
-	private CatalogRepository catalogRepository;
+	private CatalogRepository		catalogRepository;
 
 	@Override
 	public void create(CatalogDto catalogDto) {
@@ -31,7 +33,9 @@ public class CatalogDao implements ICatalogDao {
 
 	@Override
 	public void delete(CatalogDto catalogDto) {
-		catalogRepository.delete(catalogDto.getCatalogId());
+		Catalog catalog = catalogRepository.findOne(catalogDto.getCatalogId());
+		catalog.setState(DISABLE);
+		catalogRepository.save(catalog);
 	}
 
 	@Override
