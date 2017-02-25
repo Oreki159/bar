@@ -22,8 +22,9 @@ public class OrderService implements IOrderService {
 	@Override
 	@Transactional
 	public void create(OrderDto orderDto) {
-		orderDao.create(orderDto);
+		OrderDto order = orderDao.create(orderDto);
 		for (OrderDetailDto orderDetailDto : orderDto.getOrderDetails()) {
+			orderDetailDto.setOrderId(order.getOrderId());
 			orderDetailDao.create(orderDetailDto);
 		}
 
