@@ -1,0 +1,390 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Dbs",
+		"_postman_id": "b0c35b18-49d2-1a7e-8c2e-f5891ef19668",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bar",
+			"description": "",
+			"item": [
+				{
+					"name": "https://dbsapp.herokuapp.com/app/bar/findAll",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/bar/findAll",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://dbsapp.herokuapp.com/app/bar/create",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/bar/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Bar Miraflores\",\n\t\"address\":\"Av. Benavides\",\n\t\"phone\":\"123456789\",\n\t\"latitude\":122,\n\t\"longitude\":155,\n\t\"hourOpen\":1222222222222,\n\t\"hourClose\":1222222222223\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Catalog",
+			"description": "",
+			"item": [
+				{
+					"name": "https://dbsapp.herokuapp.com/app/catalog/findAll",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/catalog/findAll",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://dbsapp.herokuapp.com/app/catalog/findByBar/1",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/catalog/findByBar/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://dbsapp.herokuapp.com/app/catalog/create",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/catalog/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"startDate\":\"2017-02-25\",\n\t\"unitPrice\":\"12\",\n\t\"barId\":1,\n\t\"productId\":2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"description": "",
+			"item": [
+				{
+					"name": "https://dbsapp.herokuapp.com/app/category/findAll",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/category/findAll",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://dbsapp.herokuapp.com/app/category/create",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/category/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"categoryName\": \"Cerveza\",\n\t\"state\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://dbsapp.herokuapp.com/app/category/update",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/category/update",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"categoryId\": 1,\n    \"categoryName\": \"Cervecitas\",\n    \"state\": 1\n  }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://dbsapp.herokuapp.com/app/category/delete",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/category/delete",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"categoryId\": 9\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"description": "",
+			"item": [
+				{
+					"name": "https://dbsapp.herokuapp.com/app/customer/findAll",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/customer/findAll",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://dbsapp.herokuapp.com/app/customer/create",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/customer/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"email\":\"george@dbs.com\",\r\n\t\"pass\":\"1234\",\r\n\t\"age\": 18\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://dbsapp.herokuapp.com/app/customer/update",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/customer/update",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"customerId\": 1,\r\n\t\"email\":\"demo1@dbs.com\",\r\n\t\"pass\":\"1234\",\r\n\t\"age\": 21,\r\n    \"state\": 1\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://dbsapp.herokuapp.com/app/customer/delete",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/customer/delete",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"customerId\": 1\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"description": "",
+			"item": [
+				{
+					"name": "https://dbsapp.herokuapp.com/app/security/api/login",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/security/api/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"george@dbs.com\",\n\t\"pass\": \"1234\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"description": "",
+			"item": [
+				{
+					"name": "https://dbsapp.herokuapp.com/app/order/3",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/order/3",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://dbsapp.herokuapp.com/app/order/create",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/order/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"customerId\":1,\n\t\"orderDate\":\"2017-02-25\",\n\t\"qrcode\":\"qqweqwew\",\n\t\"orderDetails\":[\n\t\t{\n\t\t\t\"productId\":3,\n\t\t\t\"quantity\":2,\n\t\t\t\"unitPrice\":15\n\t\t},\n\t\t{\n\t\t\t\"productId\":3,\n\t\t\t\"quantity\":2,\n\t\t\t\"unitPrice\":15\n\t\t}\n\t]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"description": "",
+			"item": [
+				{
+					"name": "https://dbsapp.herokuapp.com/app/product/findAll",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/product/findAll",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://dbsapp.herokuapp.com/app/product/create",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/product/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productName\":\"Miller\",\n\t\"container\":\"500 ml\",\n\t\"categoryId\":1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://dbsapp.herokuapp.com/app/product/update",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/product/update",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productId\": 1,\n\t\"container\": \"500 ml\",\n\t\"productName\": \"Cusqueña de trigo\",\n\t\"state\": 1,\n\t\"categoryId\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://dbsapp.herokuapp.com/app/product/delete",
+					"request": {
+						"url": "https://dbsapp.herokuapp.com/app/product/delete",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productId\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
