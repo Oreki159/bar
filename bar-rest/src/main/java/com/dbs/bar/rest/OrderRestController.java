@@ -11,13 +11,13 @@ import com.dbs.bar.dto.OrderDto;
 import com.dbs.bar.service.IOrderService;
 
 @RestController
-@RequestMapping(path = "/app/order")
+@RequestMapping(path = "/app/orders")
 public class OrderRestController {
 
 	@Autowired
 	private IOrderService orderService;
 
-	@RequestMapping(path = "/create", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public void create(@RequestBody OrderDto orderDto) {
 		orderService.create(orderDto);
 	}

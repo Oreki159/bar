@@ -12,28 +12,28 @@ import com.dbs.bar.dto.ProductDto;
 import com.dbs.bar.service.IProductService;
 
 @RestController
-@RequestMapping(path = "/app/product")
+@RequestMapping(path = "/app/products")
 public class ProductRestController {
 
 	@Autowired
 	private IProductService productService;
 
-	@RequestMapping(path = "/create", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public void create(@RequestBody ProductDto productDto) {
 		productService.create(productDto);
 	}
 
-	@RequestMapping(path = "/update", method = RequestMethod.PUT)
+	@RequestMapping(method = RequestMethod.PUT)
 	public void update(@RequestBody ProductDto productDto) {
 		productService.update(productDto);
 	}
 
-	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
+	@RequestMapping(method = RequestMethod.DELETE)
 	public void delete(@RequestBody ProductDto productDto) {
 		productService.delete(productDto);
 	}
 
-	@RequestMapping(path = "/findAll", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public List<ProductDto> findAll() {
 		return productService.findAll();
 	}

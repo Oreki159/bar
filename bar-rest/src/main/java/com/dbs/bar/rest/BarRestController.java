@@ -12,28 +12,28 @@ import com.dbs.bar.dto.BarDto;
 import com.dbs.bar.service.IBarService;
 
 @RestController
-@RequestMapping(path = "/app/bar")
+@RequestMapping(path = "/app/bars")
 public class BarRestController {
 
 	@Autowired
 	private IBarService barService;
 
-	@RequestMapping(path = "/create", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public void create(@RequestBody BarDto barDto) {
 		barService.create(barDto);
 	}
 
-	@RequestMapping(path = "/update", method = RequestMethod.PUT)
+	@RequestMapping(method = RequestMethod.PUT)
 	public void update(@RequestBody BarDto barDto) {
 		barService.update(barDto);
 	}
 
-	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
+	@RequestMapping(method = RequestMethod.DELETE)
 	public void delete(@RequestBody BarDto barDto) {
 		barService.delete(barDto);
 	}
 
-	@RequestMapping(path = "/findAll", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public List<BarDto> findAll() {
 		return barService.findAll();
 	}

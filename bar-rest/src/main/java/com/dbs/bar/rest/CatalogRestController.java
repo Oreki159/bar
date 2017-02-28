@@ -13,35 +13,35 @@ import com.dbs.bar.dto.CatalogDto;
 import com.dbs.bar.service.ICatalogService;
 
 @RestController
-@RequestMapping(path = "/app/catalog")
+@RequestMapping(path = "/app/catalogs")
 public class CatalogRestController {
 
 	@Autowired
 	private ICatalogService catalogService;
 
-	@RequestMapping(path = "/create", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public void create(@RequestBody CatalogDto catalogDto) {
 		catalogService.create(catalogDto);
 	}
 
-	@RequestMapping(path = "/update", method = RequestMethod.PUT)
+	@RequestMapping(method = RequestMethod.PUT)
 	public void update(@RequestBody CatalogDto catalogDto) {
 		catalogService.update(catalogDto);
 	}
 
-	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
+	@RequestMapping(method = RequestMethod.DELETE)
 	public void delete(@RequestBody CatalogDto catalogDto) {
 		catalogService.delete(catalogDto);
 	}
 
-	@RequestMapping(path = "/findByBar/{barId}", method = RequestMethod.GET)
-	public List<CatalogDto> findByBar(@PathVariable Integer barId) {
-		return catalogService.findByBarId(barId);
-	}
-	
-	@RequestMapping(path = "/findAll", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public List<CatalogDto> findAll() {
 		return catalogService.findAll();
+	}
+	
+	@RequestMapping(path = "/bar/{barId}", method = RequestMethod.GET)
+	public List<CatalogDto> findByBar(@PathVariable Integer barId) {
+		return catalogService.findByBarId(barId);
 	}
 
 }

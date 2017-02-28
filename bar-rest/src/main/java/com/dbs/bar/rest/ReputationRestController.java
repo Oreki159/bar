@@ -12,28 +12,28 @@ import com.dbs.bar.dto.ReputationDto;
 import com.dbs.bar.service.IReputationService;
 
 @RestController
-@RequestMapping(path = "/app/reputation")
+@RequestMapping(path = "/app/reputations")
 public class ReputationRestController {
 
 	@Autowired
 	private IReputationService reputationService;
 
-	@RequestMapping(path = "/create", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public void create(@RequestBody ReputationDto reputationDto) {
 		reputationService.create(reputationDto);
 	}
 
-	@RequestMapping(path = "/update", method = RequestMethod.PUT)
+	@RequestMapping(method = RequestMethod.PUT)
 	public void update(@RequestBody ReputationDto reputationDto) {
 		reputationService.update(reputationDto);
 	}
 
-	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
+	@RequestMapping(method = RequestMethod.DELETE)
 	public void delete(@RequestBody ReputationDto reputationDto) {
 		reputationService.delete(reputationDto);
 	}
 
-	@RequestMapping(path = "/findAll", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public List<ReputationDto> findAll() {
 		return reputationService.findAll();
 	}

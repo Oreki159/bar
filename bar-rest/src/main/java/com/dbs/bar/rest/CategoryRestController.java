@@ -12,28 +12,28 @@ import com.dbs.bar.dto.CategoryDto;
 import com.dbs.bar.service.ICategoryService;
 
 @RestController
-@RequestMapping(path = "/app/category")
+@RequestMapping(path = "/app/categories")
 public class CategoryRestController {
 
 	@Autowired
 	private ICategoryService categoryService;
 
-	@RequestMapping(path = "/create", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public void create(@RequestBody CategoryDto categoryDto) {
 		categoryService.create(categoryDto);
 	}
 
-	@RequestMapping(path = "/update", method = RequestMethod.PUT)
+	@RequestMapping(method = RequestMethod.PUT)
 	public void update(@RequestBody CategoryDto categoryDto) {
 		categoryService.update(categoryDto);
 	}
 
-	@RequestMapping(path = "/delete", method = RequestMethod.DELETE)
+	@RequestMapping(method = RequestMethod.DELETE)
 	public void delete(@RequestBody CategoryDto categoryDto) {
 		categoryService.delete(categoryDto);
 	}
 
-	@RequestMapping(path = "/findAll", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public List<CategoryDto> findAll() {
 		return categoryService.findAll();
 	}
