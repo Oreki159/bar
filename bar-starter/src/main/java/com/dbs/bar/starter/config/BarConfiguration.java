@@ -38,6 +38,8 @@ import com.dbs.bar.starter.config.properties.BarDbProperties;
 		"com.dbs.bar.dao",
 		"com.dbs.bar.service",
 		"com.dbs.bar.rest",
+		"com.dbs.bar.security.manager",
+		"com.dbs.bar.security.rest",
 		"com.dbs.bar.security.filter"
 })
 public class BarConfiguration {
