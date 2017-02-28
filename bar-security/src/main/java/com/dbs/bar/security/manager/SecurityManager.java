@@ -10,19 +10,18 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.dbs.bar.dto.CustomerDto;
+import com.dbs.bar.security.constant.SecurityConstant;
 
 @Component
 public class SecurityManager {
 
 	private static final String	SECURITY_TOKEN	= "d0f8f007";
 
-	private static final String	URL_LOGIN		= "/app/security/api/login";
-
 	@Autowired
 	private TokenManager		tokenManager;
 
 	public boolean requiresAuthentication(String uri) {
-		return !URL_LOGIN.equals(uri);
+		return !SecurityConstant.URL_LOGIN.equals(uri);
 	}
 
 	public void successfulAuthentication(CustomerDto customerLogged) {
@@ -37,7 +36,7 @@ public class SecurityManager {
 		String uri = request.getRequestURI();
 		String authToken = request.getHeader(SECURITY_TOKEN);
 
-		if ((authToken == null && URL_LOGIN.equals(uri)) || (authToken != null && !URL_LOGIN.equals(uri))) {
+		if ((authToken == null && SecurityConstant.URL_LOGIN.equals(uri)) || (authToken != null && !SecurityConstant.URL_LOGIN.equals(uri))) {
 			authorize(response, tokenManager.parseToken(authToken));
 			return true;
 

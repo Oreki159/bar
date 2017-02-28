@@ -13,6 +13,7 @@ import com.auth0.jwt.JWTSigner;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.JWTVerifyException;
 import com.dbs.bar.dto.CustomerDto;
+import com.dbs.bar.security.manager.exception.TokenManagerException;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -36,7 +37,7 @@ public class TokenManager {
 			return new JWTSigner(SECRET).sign(claims);
 
 		} catch (JsonProcessingException e) {
-			throw new RuntimeException(e);
+			throw new TokenManagerException(e);
 		}
 	}
 
@@ -46,7 +47,7 @@ public class TokenManager {
 			return getObjectMapper().readValue((String) claims.get(TOKEN), CustomerDto.class);
 
 		} catch (InvalidKeyException | NoSuchAlgorithmException | IllegalStateException | SignatureException | IOException | JWTVerifyException e) {
-			throw new RuntimeException(e);
+			throw new TokenManagerException(e);
 
 		}
 	}
