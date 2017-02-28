@@ -15,6 +15,7 @@
 		<module>bar-service</module>
 		<module>bar-rest</module>
 		<module>bar-starter</module>
+		<module>bar-security</module>
 	</modules>
 
 	<properties>
@@ -120,6 +121,12 @@
 			<dependency>
 				<groupId>com.dbs.bar.rest</groupId>
 				<artifactId>bar-rest</artifactId>
+				<version>${bar.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.dbs.bar.security</groupId>
+				<artifactId>bar-security</artifactId>
 				<version>${bar.version}</version>
 			</dependency>
 
