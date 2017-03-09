@@ -50,17 +50,16 @@ public class BarDao implements IBarDao {
 		}
 		return barsDto;
 	}
-
+	
 	private BarDto parseEntityToDto(Bar bar) {
 		BarDto barDto = new BarDto();
 		BeanUtils.copyProperties(bar, barDto);
 		return barDto;
 	}
-
+	
 	private Bar parseDtoToEntity(BarDto barDto) {
 		Bar bar = new Bar();
 		BeanUtils.copyProperties(barDto, bar);
 		return bar;
 	}
-
 }
