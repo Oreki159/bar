@@ -76,5 +76,4 @@ public class CatalogDao implements ICatalogDao {
 		BeanUtils.copyProperties(catalogDto, catalog);
 		return catalog;
 	}
-
 }
