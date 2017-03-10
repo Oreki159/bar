@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Repository;
 
 import com.dbs.bar.dao.ICatalogDao;
+import com.dbs.bar.dao.constant.DaoConstant;
 import com.dbs.bar.dto.CatalogDto;
 import com.dbs.bar.entity.Catalog;
 import com.dbs.bar.repository.CatalogRepository;
@@ -22,16 +23,12 @@ import com.dbs.bar.repository.CatalogRepository;
 @Repository
 public class CatalogDao implements ICatalogDao {
 
-	private static final Integer	ENABLE	= 1;
-
-	private static final Integer	DISABLE	= 0;
-
 	@Resource
 	private CatalogRepository		catalogRepository;
 
 	@Override
 	public void create(CatalogDto catalogDto) {
-		catalogDto.setState(ENABLE);
+		catalogDto.setState(DaoConstant.ENABLE);
 		catalogRepository.save(parseDtoToEntity(catalogDto));
 	}
 
@@ -43,7 +40,7 @@ public class CatalogDao implements ICatalogDao {
 	@Override
 	public void delete(CatalogDto catalogDto) {
 		Catalog catalog = catalogRepository.findOne(catalogDto.getCatalogId());
-		catalog.setState(DISABLE);
+		catalog.setState(DaoConstant.DISABLE);
 		catalogRepository.save(catalog);
 	}
 

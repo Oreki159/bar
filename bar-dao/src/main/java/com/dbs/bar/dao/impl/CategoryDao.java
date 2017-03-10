@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Repository;
 
 import com.dbs.bar.dao.ICategoryDao;
+import com.dbs.bar.dao.constant.DaoConstant;
 import com.dbs.bar.dto.CategoryDto;
 import com.dbs.bar.entity.Category;
 import com.dbs.bar.repository.CategoryRepository;
@@ -16,16 +17,12 @@ import com.dbs.bar.repository.CategoryRepository;
 @Repository
 public class CategoryDao implements ICategoryDao {
 
-	private static final Integer	ENABLE	= 1;
-
-	private static final Integer	DISABLE	= 0;
-
 	@Resource
 	private CategoryRepository		categoryRepository;
 
 	@Override
 	public void create(CategoryDto categoryDto) {
-		categoryDto.setState(ENABLE);
+		categoryDto.setState(DaoConstant.ENABLE);
 		categoryRepository.save(parseDtoToEntity(categoryDto));
 	}
 
@@ -37,7 +34,7 @@ public class CategoryDao implements ICategoryDao {
 	@Override
 	public void delete(CategoryDto categoryDto) {
 		Category category = categoryRepository.findOne(categoryDto.getCategoryId());
-		category.setState(DISABLE);
+		category.setState(DaoConstant.DISABLE);
 		categoryRepository.save(category);
 	}
 

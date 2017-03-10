@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Repository;
 
 import com.dbs.bar.dao.IReputationDao;
+import com.dbs.bar.dao.constant.DaoConstant;
 import com.dbs.bar.dto.ReputationDto;
 import com.dbs.bar.entity.Reputation;
 import com.dbs.bar.repository.ReputationRepository;
@@ -16,16 +17,12 @@ import com.dbs.bar.repository.ReputationRepository;
 @Repository
 public class ReputationDao implements IReputationDao {
 
-	private static final Integer	ENABLE	= 1;
-
-	private static final Integer	DISABLE	= 0;
-
 	@Resource
 	private ReputationRepository	reputationRepository;
 
 	@Override
 	public void create(ReputationDto reputationDto) {
-		reputationDto.setState(ENABLE);
+		reputationDto.setState(DaoConstant.ENABLE);
 		reputationRepository.save(parseDtoToEntity(reputationDto));
 	}
 
@@ -37,7 +34,7 @@ public class ReputationDao implements IReputationDao {
 	@Override
 	public void delete(ReputationDto reputationDto) {
 		Reputation reputation = reputationRepository.findOne(reputationDto.getReputationId());
-		reputation.setState(DISABLE);
+		reputation.setState(DaoConstant.DISABLE);
 		reputationRepository.save(reputation);
 	}
 

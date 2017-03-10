@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Repository;
 
 import com.dbs.bar.dao.IBarDao;
+import com.dbs.bar.dao.constant.DaoConstant;
 import com.dbs.bar.dto.BarDto;
 import com.dbs.bar.entity.Bar;
 import com.dbs.bar.repository.BarRepository;
@@ -16,16 +17,12 @@ import com.dbs.bar.repository.BarRepository;
 @Repository
 public class BarDao implements IBarDao {
 
-	private static final Integer	ENABLE	= 1;
-
-	private static final Integer	DISABLE	= 0;
-
 	@Resource
 	private BarRepository			barRepository;
 
 	@Override
 	public void create(BarDto barDto) {
-		barDto.setState(ENABLE);
+		barDto.setState(DaoConstant.ENABLE);
 		barRepository.save(parseDtoToEntity(barDto));
 	}
 
@@ -37,7 +34,7 @@ public class BarDao implements IBarDao {
 	@Override
 	public void delete(BarDto barDto) {
 		Bar bar = barRepository.findOne(barDto.getBarId());
-		bar.setState(DISABLE);
+		bar.setState(DaoConstant.DISABLE);
 		barRepository.save(bar);
 	}
 

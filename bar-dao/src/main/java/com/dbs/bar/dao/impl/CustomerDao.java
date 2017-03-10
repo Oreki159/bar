@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Repository;
 
 import com.dbs.bar.dao.ICustomerDao;
+import com.dbs.bar.dao.constant.DaoConstant;
 import com.dbs.bar.dto.CustomerDto;
 import com.dbs.bar.entity.Customer;
 import com.dbs.bar.repository.CustomerRepository;
@@ -16,16 +17,12 @@ import com.dbs.bar.repository.CustomerRepository;
 @Repository
 public class CustomerDao implements ICustomerDao {
 
-	private static final Integer	ENABLE	= 1;
-
-	private static final Integer	DISABLE	= 0;
-
 	@Resource
 	private CustomerRepository		customerRepository;
 
 	@Override
 	public void create(CustomerDto customerDto) {
-		customerDto.setState(ENABLE);
+		customerDto.setState(DaoConstant.ENABLE);
 		customerRepository.save(parseDtoToEntity(customerDto));
 	}
 
@@ -37,7 +34,7 @@ public class CustomerDao implements ICustomerDao {
 	@Override
 	public void delete(CustomerDto customerDto) {
 		Customer customer = customerRepository.findOne(customerDto.getCustomerId());
-		customer.setState(DISABLE);
+		customer.setState(DaoConstant.DISABLE);
 		customerRepository.save(customer);
 	}
 

@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Repository;
 
 import com.dbs.bar.dao.IProductDao;
+import com.dbs.bar.dao.constant.DaoConstant;
 import com.dbs.bar.dto.ProductDto;
 import com.dbs.bar.entity.Product;
 import com.dbs.bar.repository.ProductRepository;
@@ -22,16 +23,12 @@ import com.dbs.bar.repository.ProductRepository;
 @Repository
 public class ProductDao implements IProductDao {
 
-	private static final Integer	ENABLE	= 1;
-
-	private static final Integer	DISABLE	= 0;
-
 	@Resource
 	private ProductRepository		productRepository;
 
 	@Override
 	public void create(ProductDto productDto) {
-		productDto.setState(ENABLE);
+		productDto.setState(DaoConstant.ENABLE);
 		productRepository.save(parseDtoToEntity(productDto));
 	}
 
@@ -43,7 +40,7 @@ public class ProductDao implements IProductDao {
 	@Override
 	public void delete(ProductDto productDto) {
 		Product product = productRepository.findOne(productDto.getProductId());
-		product.setState(DISABLE);
+		product.setState(DaoConstant.DISABLE);
 		productRepository.save(product);
 	}
 

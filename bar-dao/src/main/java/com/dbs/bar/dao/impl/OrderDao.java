@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Repository;
 
 import com.dbs.bar.dao.IOrderDao;
+import com.dbs.bar.dao.constant.DaoConstant;
 import com.dbs.bar.dto.OrderDto;
 import com.dbs.bar.entity.Order;
 import com.dbs.bar.repository.OrderRepository;
@@ -16,16 +17,12 @@ import com.dbs.bar.repository.OrderRepository;
 @Repository
 public class OrderDao implements IOrderDao {
 
-	private static final Integer	ENABLE	= 1;
-
-	private static final Integer	DISABLE	= 0;
-
 	@Resource
 	private OrderRepository			orderRepository;
 
 	@Override
 	public OrderDto create(OrderDto orderDto) {
-		orderDto.setState(ENABLE);
+		orderDto.setState(DaoConstant.ENABLE);
 		return parseEntityToDto(orderRepository.save(parseDtoToEntity(orderDto)));
 	}
 
@@ -37,7 +34,7 @@ public class OrderDao implements IOrderDao {
 	@Override
 	public void delete(OrderDto orderDto) {
 		Order order = orderRepository.findOne(orderDto.getOrderId());
-		order.setState(DISABLE);
+		order.setState(DaoConstant.DISABLE);
 		orderRepository.save(order);
 	}
 
