@@ -31,7 +31,7 @@ public class Order implements Serializable {
 	@Column(name = "ORDER_DATE")
 	private Date				orderDate;
 
-	private String				qrcode;
+	private String				qrCode;
 
 	private Integer				state;
 
@@ -56,12 +56,12 @@ public class Order implements Serializable {
 		this.orderDate = orderDate;
 	}
 
-	public String getQrcode() {
-		return this.qrcode;
+	public String getQrCode() {
+		return this.qrCode;
 	}
 
-	public void setQrcode(String qrcode) {
-		this.qrcode = qrcode;
+	public void setQrCode(String qrCode) {
+		this.qrCode = qrCode;
 	}
 
 	public Integer getState() {
@@ -79,4 +79,5 @@ public class Order implements Serializable {
 	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
 	}
+
 }
