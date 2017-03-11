@@ -1,5 +1,14 @@
-/target/
-.settings
-.project
-.classpath
+# building
+target
 *.log
+
+# Eclipse
+.classpath
+.project
+.settings
+
+# IDEA
+*.iml
+*.ipr
+*.iws
+*.idea
