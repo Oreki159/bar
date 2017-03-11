@@ -12,31 +12,42 @@
 			"description": "",
 			"item": [
 				{
-					"name": "https://dbsapp.herokuapp.com/app/bar/findAll",
+					"name": "https://dbsapp.herokuapp.com/app/bars",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/bar/findAll",
+						"url": "https://dbsapp.herokuapp.com/app/bars",
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
+								"description": ""
+							}
+						],
 						"body": {},
 						"description": ""
 					},
 					"response": []
 				},
 				{
-					"name": "https://dbsapp.herokuapp.com/app/bar/create",
+					"name": "https://dbsapp.herokuapp.com/app/bars",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/bar/create",
+						"url": "https://dbsapp.herokuapp.com/app/bars",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
 								"value": "application/json",
 								"description": ""
+							},
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
+								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\":\"Bar Miraflores\",\n\t\"address\":\"Av. Benavides\",\n\t\"phone\":\"123456789\",\n\t\"latitude\":122,\n\t\"longitude\":155,\n\t\"hourOpen\":1222222222222,\n\t\"hourClose\":1222222222223\n}"
+							"raw": "{\n\t\"name\":\"Bar San Borja\",\n\t\"address\":\"Av. Aviacion\",\n\t\"phone\":\"123456789\",\n\t\"latitude\":122,\n\t\"longitude\":155,\n\t\"hourOpen\":1222222222222,\n\t\"hourClose\":1222222222223\n}"
 						},
 						"description": ""
 					},
@@ -49,9 +60,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "https://dbsapp.herokuapp.com/app/catalog/findAll",
+					"name": "https://dbsapp.herokuapp.com/app/catalogs",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/catalog/findAll",
+						"url": "https://dbsapp.herokuapp.com/app/catalogs",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -60,20 +71,26 @@
 					"response": []
 				},
 				{
-					"name": "https://dbsapp.herokuapp.com/app/catalog/findByBar/1",
+					"name": "https://dbsapp.herokuapp.com/app/catalogs/bar",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/catalog/findByBar/1",
+						"url": "https://dbsapp.herokuapp.com/app/catalogs/bar/1",
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
+								"description": ""
+							}
+						],
 						"body": {},
 						"description": ""
 					},
 					"response": []
 				},
 				{
-					"name": "https://dbsapp.herokuapp.com/app/catalog/create",
+					"name": "https://dbsapp.herokuapp.com/app/catalogs",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/catalog/create",
+						"url": "https://dbsapp.herokuapp.com/app/catalogs",
 						"method": "POST",
 						"header": [
 							{
@@ -97,9 +114,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "https://dbsapp.herokuapp.com/app/category/findAll",
+					"name": "https://dbsapp.herokuapp.com/app/categories",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/category/findAll",
+						"url": "https://dbsapp.herokuapp.com/app/categories",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -108,9 +125,9 @@
 					"response": []
 				},
 				{
-					"name": "https://dbsapp.herokuapp.com/app/category/create",
+					"name": "https://dbsapp.herokuapp.com/app/categories",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/category/create",
+						"url": "https://dbsapp.herokuapp.com/app/categories",
 						"method": "POST",
 						"header": [
 							{
@@ -128,9 +145,9 @@
 					"response": []
 				},
 				{
-					"name": "https://dbsapp.herokuapp.com/app/category/update",
+					"name": "https://dbsapp.herokuapp.com/app/categories",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/category/update",
+						"url": "https://dbsapp.herokuapp.com/app/categories",
 						"method": "PUT",
 						"header": [
 							{
@@ -148,9 +165,9 @@
 					"response": []
 				},
 				{
-					"name": "https://dbsapp.herokuapp.com/app/category/delete",
+					"name": "https://dbsapp.herokuapp.com/app/categories",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/category/delete",
+						"url": "https://dbsapp.herokuapp.com/app/categories",
 						"method": "DELETE",
 						"header": [
 							{
@@ -174,9 +191,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "https://dbsapp.herokuapp.com/app/customer/findAll",
+					"name": "https://dbsapp.herokuapp.com/app/customers",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/customer/findAll",
+						"url": "https://dbsapp.herokuapp.com/app/customers",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -185,9 +202,9 @@
 					"response": []
 				},
 				{
-					"name": "https://dbsapp.herokuapp.com/app/customer/create",
+					"name": "https://dbsapp.herokuapp.com/app/customers",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/customer/create",
+						"url": "https://dbsapp.herokuapp.com/app/customers",
 						"method": "POST",
 						"header": [
 							{
@@ -205,9 +222,9 @@
 					"response": []
 				},
 				{
-					"name": "https://dbsapp.herokuapp.com/app/customer/update",
+					"name": "https://dbsapp.herokuapp.com/app/customers",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/customer/update",
+						"url": "https://dbsapp.herokuapp.com/app/customers",
 						"method": "PUT",
 						"header": [
 							{
@@ -225,9 +242,9 @@
 					"response": []
 				},
 				{
-					"name": "https://dbsapp.herokuapp.com/app/customer/delete",
+					"name": "https://dbsapp.herokuapp.com/app/customers",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/customer/delete",
+						"url": "https://dbsapp.herokuapp.com/app/customers",
 						"method": "DELETE",
 						"header": [
 							{
@@ -277,9 +294,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "https://dbsapp.herokuapp.com/app/order/3",
+					"name": "https://dbsapp.herokuapp.com/app/orders/3",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/order/3",
+						"url": "https://dbsapp.herokuapp.com/app/orders/3",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -288,9 +305,9 @@
 					"response": []
 				},
 				{
-					"name": "https://dbsapp.herokuapp.com/app/order/create",
+					"name": "https://dbsapp.herokuapp.com/app/orders",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/order/create",
+						"url": "https://dbsapp.herokuapp.com/app/orders",
 						"method": "POST",
 						"header": [
 							{
@@ -314,9 +331,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "https://dbsapp.herokuapp.com/app/product/findAll",
+					"name": "https://dbsapp.herokuapp.com/app/products",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/product/findAll",
+						"url": "https://dbsapp.herokuapp.com/app/products",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -325,9 +342,9 @@
 					"response": []
 				},
 				{
-					"name": "https://dbsapp.herokuapp.com/app/product/create",
+					"name": "https://dbsapp.herokuapp.com/app/products",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/product/create",
+						"url": "https://dbsapp.herokuapp.com/app/products",
 						"method": "POST",
 						"header": [
 							{
@@ -345,9 +362,9 @@
 					"response": []
 				},
 				{
-					"name": "https://dbsapp.herokuapp.com/app/product/update",
+					"name": "https://dbsapp.herokuapp.com/app/products",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/product/update",
+						"url": "https://dbsapp.herokuapp.com/app/products",
 						"method": "PUT",
 						"header": [
 							{
@@ -365,9 +382,9 @@
 					"response": []
 				},
 				{
-					"name": "https://dbsapp.herokuapp.com/app/product/delete",
+					"name": "https://dbsapp.herokuapp.com/app/products",
 					"request": {
-						"url": "https://dbsapp.herokuapp.com/app/product/delete",
+						"url": "https://dbsapp.herokuapp.com/app/products",
 						"method": "DELETE",
 						"header": [
 							{
