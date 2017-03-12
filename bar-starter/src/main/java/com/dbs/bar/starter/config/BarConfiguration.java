@@ -12,6 +12,7 @@ import org.springframework.context.annotation.PropertySources;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -94,7 +95,7 @@ public class BarConfiguration {
 
 	@Bean
 	public ObjectMapper objectMapper() {
-		final ObjectMapper objectMapper = new ObjectMapper();
+		final ObjectMapper objectMapper = new Jackson2ObjectMapperBuilder().createXmlMapper(false).build();
 		objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
 		objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
