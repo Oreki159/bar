@@ -1,7 +1,7 @@
 package com.dbs.bar.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public class OrderDto implements Serializable {
@@ -12,7 +12,7 @@ public class OrderDto implements Serializable {
 
 	private Integer					customerId;
 
-	private Date					orderDate;
+	private LocalDate				orderDate;
 
 	private String					qrCode;
 
@@ -36,11 +36,11 @@ public class OrderDto implements Serializable {
 		this.customerId = customerId;
 	}
 
-	public Date getOrderDate() {
+	public LocalDate getOrderDate() {
 		return orderDate;
 	}
 
-	public void setOrderDate(Date orderDate) {
+	public void setOrderDate(LocalDate orderDate) {
 		this.orderDate = orderDate;
 	}
 

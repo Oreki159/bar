@@ -2,7 +2,7 @@ package com.dbs.bar.dto;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class CatalogDto implements Serializable {
 
@@ -10,9 +10,9 @@ public class CatalogDto implements Serializable {
 
 	private Integer				catalogId;
 
-	private Date				finalDate;
+	private LocalDate			finalDate;
 
-	private Date				startDate;
+	private LocalDate			startDate;
 
 	private Integer				state;
 
@@ -32,19 +32,19 @@ public class CatalogDto implements Serializable {
 		this.catalogId = catalogId;
 	}
 
-	public Date getFinalDate() {
+	public LocalDate getFinalDate() {
 		return finalDate;
 	}
 
-	public void setFinalDate(Date finalDate) {
+	public void setFinalDate(LocalDate finalDate) {
 		this.finalDate = finalDate;
 	}
 
-	public Date getStartDate() {
+	public LocalDate getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
 

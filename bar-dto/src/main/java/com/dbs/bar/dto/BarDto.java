@@ -2,7 +2,7 @@ package com.dbs.bar.dto;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.sql.Time;
+import java.time.LocalTime;
 
 public class BarDto implements Serializable {
 
@@ -12,9 +12,9 @@ public class BarDto implements Serializable {
 
 	private String				address;
 
-	private Time				hourClose;
+	private LocalTime			hourClose;
 
-	private Time				hourOpen;
+	private LocalTime			hourOpen;
 
 	private BigDecimal			latitude;
 
@@ -42,19 +42,19 @@ public class BarDto implements Serializable {
 		this.address = address;
 	}
 
-	public Time getHourClose() {
+	public LocalTime getHourClose() {
 		return hourClose;
 	}
 
-	public void setHourClose(Time hourClose) {
+	public void setHourClose(LocalTime hourClose) {
 		this.hourClose = hourClose;
 	}
 
-	public Time getHourOpen() {
+	public LocalTime getHourOpen() {
 		return hourOpen;
 	}
 
-	public void setHourOpen(Time hourOpen) {
+	public void setHourOpen(LocalTime hourOpen) {
 		this.hourOpen = hourOpen;
 	}
 
