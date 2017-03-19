@@ -1,6 +1,7 @@
 package com.dbs.bar.dto;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class CustomerDto implements Serializable {
 
@@ -8,7 +9,7 @@ public class CustomerDto implements Serializable {
 
 	private Integer				customerId;
 
-	private String				age;
+	private LocalDate			birthDate;
 
 	private String				email;
 
@@ -24,12 +25,12 @@ public class CustomerDto implements Serializable {
 		this.customerId = customerId;
 	}
 
-	public String getAge() {
-		return age;
+	public LocalDate getBirthDate() {
+		return birthDate;
 	}
 
-	public void setAge(String age) {
-		this.age = age;
+	public void setBirthDate(LocalDate birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public String getEmail() {
