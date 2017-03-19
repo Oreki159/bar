@@ -21,7 +21,7 @@ public class SecurityFilter extends OncePerRequestFilter {
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-		if (securityManager.requiresAuthentication(request.getRequestURI())) {
+		if (securityManager.requiresAuthentication(request.getMethod(), request.getRequestURI())) {
 			if (securityManager.isFullyAuthenticated(request, response)) {
 				filterChain.doFilter(request, response);
 			}

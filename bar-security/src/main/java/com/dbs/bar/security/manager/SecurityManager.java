@@ -15,13 +15,15 @@ import com.dbs.bar.security.constant.SecurityConstant;
 @Component
 public class SecurityManager {
 
-	private static final String	SECURITY_TOKEN	= "d0f8f007";
+	private static final String	SECURITY_TOKEN		= "d0f8f007";
+
+	private static final String	HTTP_METHOD_POST	= "POST";
 
 	@Autowired
 	private TokenManager		tokenManager;
 
-	public boolean requiresAuthentication(String uri) {
-		return !SecurityConstant.URL_LOGIN.equals(uri);
+	public boolean requiresAuthentication(String httpMethod, String uri) {
+		return HTTP_METHOD_POST.equalsIgnoreCase(httpMethod) && (!SecurityConstant.URL_LOGIN.equals(uri) || !SecurityConstant.URL_CUSTOMER_SAVE.equals(uri));
 	}
 
 	public void successfulAuthentication(CustomerDto customerLogged) {
