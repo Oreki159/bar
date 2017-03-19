@@ -42,12 +42,12 @@ public class Bar implements Serializable {
 
 	private String				phone;
 
+	private String				image;
+
 	private Integer				state;
 
-	public Bar() {}
-
 	public Integer getBarId() {
-		return this.barId;
+		return barId;
 	}
 
 	public void setBarId(Integer barId) {
@@ -55,7 +55,7 @@ public class Bar implements Serializable {
 	}
 
 	public String getAddress() {
-		return this.address;
+		return address;
 	}
 
 	public void setAddress(String address) {
@@ -63,7 +63,7 @@ public class Bar implements Serializable {
 	}
 
 	public Time getHourClose() {
-		return this.hourClose;
+		return hourClose;
 	}
 
 	public void setHourClose(Time hourClose) {
@@ -71,7 +71,7 @@ public class Bar implements Serializable {
 	}
 
 	public Time getHourOpen() {
-		return this.hourOpen;
+		return hourOpen;
 	}
 
 	public void setHourOpen(Time hourOpen) {
@@ -79,7 +79,7 @@ public class Bar implements Serializable {
 	}
 
 	public BigDecimal getLatitude() {
-		return this.latitude;
+		return latitude;
 	}
 
 	public void setLatitude(BigDecimal latitude) {
@@ -87,7 +87,7 @@ public class Bar implements Serializable {
 	}
 
 	public BigDecimal getLongitude() {
-		return this.longitude;
+		return longitude;
 	}
 
 	public void setLongitude(BigDecimal longitude) {
@@ -95,7 +95,7 @@ public class Bar implements Serializable {
 	}
 
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	public void setName(String name) {
@@ -103,15 +103,23 @@ public class Bar implements Serializable {
 	}
 
 	public String getPhone() {
-		return this.phone;
+		return phone;
 	}
 
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
 	public Integer getState() {
-		return this.state;
+		return state;
 	}
 
 	public void setState(Integer state) {

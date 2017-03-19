@@ -24,6 +24,8 @@ public class BarDto implements Serializable {
 
 	private String				phone;
 
+	private String				image;
+
 	private Integer				state;
 
 	public Integer getBarId() {
@@ -88,6 +90,14 @@ public class BarDto implements Serializable {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public Integer getState() {

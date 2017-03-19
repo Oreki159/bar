@@ -34,10 +34,10 @@ public class Product implements Serializable {
 	@Column(name = "CATEGORY_ID")
 	private Integer				categoryId;
 
-	public Product() {}
+	private String				image;
 
 	public Integer getProductId() {
-		return this.productId;
+		return productId;
 	}
 
 	public void setProductId(Integer productId) {
@@ -45,7 +45,7 @@ public class Product implements Serializable {
 	}
 
 	public String getContainer() {
-		return this.container;
+		return container;
 	}
 
 	public void setContainer(String container) {
@@ -53,7 +53,7 @@ public class Product implements Serializable {
 	}
 
 	public String getProductName() {
-		return this.productName;
+		return productName;
 	}
 
 	public void setProductName(String productName) {
@@ -61,7 +61,7 @@ public class Product implements Serializable {
 	}
 
 	public Integer getState() {
-		return this.state;
+		return state;
 	}
 
 	public void setState(Integer state) {
@@ -74,6 +74,14 @@ public class Product implements Serializable {
 
 	public void setCategoryId(Integer categoryId) {
 		this.categoryId = categoryId;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 }

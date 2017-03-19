@@ -12,6 +12,8 @@ public class ProductDto implements Serializable {
 
 	private String				productName;
 
+	private String				image;
+
 	private Integer				state;
 
 	private Integer				categoryId;
@@ -40,6 +42,14 @@ public class ProductDto implements Serializable {
 
 	public void setProductName(String productName) {
 		this.productName = productName;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public Integer getState() {
