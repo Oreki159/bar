@@ -1,6 +1,7 @@
 package com.dbs.bar.entity;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,7 +25,7 @@ public class Customer implements Serializable {
 	@Column(name = "CUSTOMER_ID")
 	private Integer				customerId;
 
-	private String				age;
+	private Date				birthDate;
 
 	private String				email;
 
@@ -35,23 +36,23 @@ public class Customer implements Serializable {
 	public Customer() {}
 
 	public Integer getCustomerId() {
-		return this.customerId;
+		return customerId;
 	}
 
 	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
 	}
 
-	public String getAge() {
-		return this.age;
+	public Date getBirthDate() {
+		return birthDate;
 	}
 
-	public void setAge(String age) {
-		this.age = age;
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public String getEmail() {
-		return this.email;
+		return email;
 	}
 
 	public void setEmail(String email) {
@@ -59,7 +60,7 @@ public class Customer implements Serializable {
 	}
 
 	public String getPass() {
-		return this.pass;
+		return pass;
 	}
 
 	public void setPass(String pass) {
@@ -67,7 +68,7 @@ public class Customer implements Serializable {
 	}
 
 	public Integer getState() {
-		return this.state;
+		return state;
 	}
 
 	public void setState(Integer state) {
