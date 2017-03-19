@@ -47,7 +47,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\":\"Bar San Borja\",\n\t\"address\":\"Av. Aviacion\",\n\t\"phone\":\"123456789\",\n\t\"latitude\":122,\n\t\"longitude\":155,\n\t\"hourOpen\":1222222222222,\n\t\"hourClose\":1222222222223\n}"
+							"raw": "{\n\t\"name\":\"Bar San Borja 2\",\n\t\"address\":\"Av. Aviacion\",\n\t\"phone\":\"123456789\",\n\t\"latitude\":122,\n\t\"longitude\":155,\n\t\"hourOpen\":\"20:00:00\",\n\t\"hourClose\":\"03:00:00\"\n}"
 						},
 						"description": ""
 					},
@@ -64,7 +64,13 @@
 					"request": {
 						"url": "https://dbsapp.herokuapp.com/app/catalogs",
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
+								"description": ""
+							}
+						],
 						"body": {},
 						"description": ""
 					},
@@ -97,11 +103,16 @@
 								"key": "Content-Type",
 								"value": "application/json",
 								"description": ""
+							},
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
+								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"startDate\":\"2017-02-25\",\n\t\"unitPrice\":\"12\",\n\t\"barId\":1,\n\t\"productId\":2\n}"
+							"raw": "{\n\t\"startDate\":\"2017-02-25\",\n\t\"unitPrice\":\"12\",\n\t\"barId\":2,\n\t\"productId\":2\n}"
 						},
 						"description": ""
 					},
@@ -118,7 +129,13 @@
 					"request": {
 						"url": "https://dbsapp.herokuapp.com/app/categories",
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
+								"description": ""
+							}
+						],
 						"body": {},
 						"description": ""
 					},
@@ -133,6 +150,11 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
 								"description": ""
 							}
 						],
@@ -154,6 +176,11 @@
 								"key": "Content-Type",
 								"value": "application/json",
 								"description": ""
+							},
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
+								"description": ""
 							}
 						],
 						"body": {
@@ -173,6 +200,11 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
 								"description": ""
 							}
 						],
@@ -195,7 +227,13 @@
 					"request": {
 						"url": "https://dbsapp.herokuapp.com/app/customers",
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
+								"description": ""
+							}
+						],
 						"body": {},
 						"description": ""
 					},
@@ -211,11 +249,16 @@
 								"key": "Content-Type",
 								"value": "application/json",
 								"description": ""
+							},
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
+								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"email\":\"george@dbs.com\",\r\n\t\"pass\":\"1234\",\r\n\t\"age\": 18\r\n}"
+							"raw": "{\r\n\t\"email\":\"demo1@dbs.com\",\r\n\t\"pass\":\"1234\",\r\n\t\"age\": 18\r\n}"
 						},
 						"description": ""
 					},
@@ -230,6 +273,11 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
 								"description": ""
 							}
 						],
@@ -250,6 +298,11 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
 								"description": ""
 							}
 						],
@@ -298,7 +351,13 @@
 					"request": {
 						"url": "https://dbsapp.herokuapp.com/app/orders/3",
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
+								"description": ""
+							}
+						],
 						"body": {},
 						"description": ""
 					},
@@ -313,6 +372,11 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
 								"description": ""
 							}
 						],
@@ -335,7 +399,13 @@
 					"request": {
 						"url": "https://dbsapp.herokuapp.com/app/products",
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
+								"description": ""
+							}
+						],
 						"body": {},
 						"description": ""
 					},
@@ -350,6 +420,11 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
 								"description": ""
 							}
 						],
@@ -371,6 +446,11 @@
 								"key": "Content-Type",
 								"value": "application/json",
 								"description": ""
+							},
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
+								"description": ""
 							}
 						],
 						"body": {
@@ -390,6 +470,11 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "D0f8f007",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6IntcImN1c3RvbWVySWRcIjo4LFwiYWdlXCI6XCIxOFwiLFwiZW1haWxcIjpcImdlb3JnZUBkYnMuY29tXCIsXCJwYXNzXCI6XCIxMjM0XCIsXCJzdGF0ZVwiOjF9In0.8DCWCaYet7Amo4cqRg5fCDKXUOT0_0tQLASbLzPSDJU",
 								"description": ""
 							}
 						],
