@@ -1,6 +1,11 @@
 package com.dbs.bar.dao.impl;
 
+import static java.time.Instant.ofEpochMilli;
+import static java.time.LocalDateTime.ofInstant;
+import static java.time.ZoneId.systemDefault;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -65,12 +70,18 @@ public class CatalogDao implements ICatalogDao {
 	private CatalogDto parseEntityToDto(Catalog catalog) {
 		CatalogDto catalogDto = new CatalogDto();
 		BeanUtils.copyProperties(catalog, catalogDto);
+
+		catalogDto.setStartDate(catalog.getStartDate() == null ? null : ofInstant(ofEpochMilli(catalog.getStartDate().getTime()), systemDefault()).toLocalDate());
+		catalogDto.setFinalDate(catalog.getFinalDate() == null ? null : ofInstant(ofEpochMilli(catalog.getFinalDate().getTime()), systemDefault()).toLocalDate());
 		return catalogDto;
 	}
 
 	private Catalog parseDtoToEntity(CatalogDto catalogDto) {
 		Catalog catalog = new Catalog();
 		BeanUtils.copyProperties(catalogDto, catalog);
+		catalog.setStartDate(catalogDto.getStartDate() == null ? null : Date.from(catalogDto.getStartDate().atStartOfDay(systemDefault()).toInstant()));
+		catalog.setFinalDate(catalogDto.getFinalDate() == null ? null : Date.from(catalogDto.getFinalDate().atStartOfDay(systemDefault()).toInstant()));
+
 		return catalog;
 	}
 }

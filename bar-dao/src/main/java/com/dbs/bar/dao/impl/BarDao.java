@@ -1,5 +1,6 @@
 package com.dbs.bar.dao.impl;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,14 +48,21 @@ public class BarDao implements IBarDao {
 		}
 		return barsDto;
 	}	
+
 	private BarDto parseEntityToDto(Bar bar) {
 		BarDto barDto = new BarDto();
 		BeanUtils.copyProperties(bar, barDto);
+		barDto.setHourOpen(bar.getHourOpen().toLocalTime());
+		barDto.setHourClose(bar.getHourClose().toLocalTime());
 		return barDto;
 	}	
+
 	private Bar parseDtoToEntity(BarDto barDto) {
 		Bar bar = new Bar();
 		BeanUtils.copyProperties(barDto, bar);
+		bar.setHourOpen(Time.valueOf(barDto.getHourOpen()));
+		bar.setHourClose(Time.valueOf(barDto.getHourClose()));
 		return bar;
 	}
+
 }

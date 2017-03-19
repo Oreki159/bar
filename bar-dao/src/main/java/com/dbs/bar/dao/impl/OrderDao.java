@@ -1,6 +1,11 @@
 package com.dbs.bar.dao.impl;
 
+import static java.time.Instant.ofEpochMilli;
+import static java.time.LocalDateTime.ofInstant;
+import static java.time.ZoneId.systemDefault;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -64,12 +69,15 @@ public class OrderDao implements IOrderDao {
 	private OrderDto parseEntityToDto(Order order) {
 		OrderDto orderDto = new OrderDto();
 		BeanUtils.copyProperties(order, orderDto);
+		orderDto.setOrderDate(order.getOrderDate() == null ? null : ofInstant(ofEpochMilli(order.getOrderDate().getTime()), systemDefault()).toLocalDate());
 		return orderDto;
 	}
 
 	private Order parseDtoToEntity(OrderDto orderDto) {
 		Order order = new Order();
 		BeanUtils.copyProperties(orderDto, order);
+		order.setOrderDate(orderDto.getOrderDate() == null ? null : Date.from(orderDto.getOrderDate().atStartOfDay(systemDefault()).toInstant()));
+
 		return order;
 	}
 
