@@ -23,7 +23,7 @@ public class SecurityManager {
 	private TokenManager		tokenManager;
 
 	public boolean requiresAuthentication(String httpMethod, String uri) {
-		return HTTP_METHOD_POST.equalsIgnoreCase(httpMethod) && (!SecurityConstant.URL_LOGIN.equals(uri) || !SecurityConstant.URL_CUSTOMER_SAVE.equals(uri));
+		return !(HTTP_METHOD_POST.equals(httpMethod) && (SecurityConstant.URL_LOGIN.equals(uri) || SecurityConstant.URL_CUSTOMER_SAVE.equals(uri)));
 	}
 
 	public void successfulAuthentication(CustomerDto customerLogged) {
