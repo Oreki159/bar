@@ -25,6 +25,7 @@ public class Customer implements Serializable {
 	@Column(name = "CUSTOMER_ID")
 	private Integer				customerId;
 
+	@Column(name = "BIRTH_DATE")
 	private Date				birthDate;
 
 	private String				email;
