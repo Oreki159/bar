@@ -1,6 +1,11 @@
 package com.dbs.bar.dao.impl;
 
+import static java.time.Instant.ofEpochMilli;
+import static java.time.LocalDateTime.ofInstant;
+import static java.time.ZoneId.systemDefault;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -57,6 +62,8 @@ public class CustomerDao implements ICustomerDao {
 		if (customer != null) {
 			CustomerDto customerDto = new CustomerDto();
 			BeanUtils.copyProperties(customer, customerDto);
+
+			customerDto.setBirthDate(customer.getBirthDate() == null ? null : ofInstant(ofEpochMilli(customer.getBirthDate().getTime()), systemDefault()).toLocalDate());
 			return customerDto;
 		}
 		return null;
@@ -66,6 +73,7 @@ public class CustomerDao implements ICustomerDao {
 		if (customerDto != null) {
 			Customer customer = new Customer();
 			BeanUtils.copyProperties(customerDto, customer);
+			customer.setBirthDate(customerDto.getBirthDate() == null ? null : Date.from(customerDto.getBirthDate().atStartOfDay(systemDefault()).toInstant()));
 			return customer;
 		}
 		return null;
