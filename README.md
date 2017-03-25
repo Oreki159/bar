@@ -1,4 +1,4 @@
-# Bar Soft Backend
+# Bar Soft Back-End
 
 ## Resumen
 
