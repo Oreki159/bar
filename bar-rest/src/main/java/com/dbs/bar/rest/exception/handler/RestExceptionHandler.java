@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import com.dbs.bar.exception.BusinessException;
+
 @RestControllerAdvice
 public class RestExceptionHandler {
 
@@ -21,6 +23,12 @@ public class RestExceptionHandler {
 	@ExceptionHandler(RuntimeException.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	public void processRuntimeException(RuntimeException ex) {
+		LOGGER.error(ex.getMessage(), ex);
+	}
+
+	@ExceptionHandler(BusinessException.class)
+	@ResponseStatus(HttpStatus.CONFLICT)
+	public void processBusinessException(BusinessException ex) {
 		LOGGER.error(ex.getMessage(), ex);
 	}
 
