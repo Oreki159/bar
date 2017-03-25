@@ -8,14 +8,15 @@
 	<name>bar</name>
 
 	<modules>
+		<module>bar-exception</module>
 		<module>bar-entity</module>
 		<module>bar-repository</module>
 		<module>bar-dto</module>
 		<module>bar-dao</module>
 		<module>bar-service</module>
 		<module>bar-rest</module>
-		<module>bar-starter</module>
 		<module>bar-security</module>
+		<module>bar-starter</module>
 	</modules>
 
 	<properties>
@@ -89,6 +90,12 @@
 	<dependencyManagement>
 		<dependencies>
 
+			<dependency>
+				<groupId>com.dbs.bar.exception</groupId>
+				<artifactId>bar-exception</artifactId>
+				<version>${bar.version}</version>
+			</dependency>
+			
 			<dependency>
 				<groupId>com.dbs.bar.entity</groupId>
 				<artifactId>bar-entity</artifactId>
