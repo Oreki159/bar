@@ -1,5 +1,6 @@
 package com.dbs.bar.service.impl;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.dbs.bar.dao.ICustomerDao;
 import com.dbs.bar.dto.CustomerDto;
+import com.dbs.bar.exception.BusinessException;
 import com.dbs.bar.service.ICustomerService;
 
 /**
@@ -23,6 +25,16 @@ public class CustomerService implements ICustomerService {
 
 	@Override
 	public void create(CustomerDto customerDto) {
+		long years = LocalDate.now().getYear() - customerDto.getBirthDate().getYear();
+		if (years < 18) {
+			throw new BusinessException();
+		}
+		List<CustomerDto> customers = customerDao.findAll();
+		for (CustomerDto customer : customers) {
+			if (customer.getEmail().equals(customerDto.getEmail())) {
+				throw new BusinessException();
+			}
+		}
 		customerDao.create(customerDto);
 	}
 
